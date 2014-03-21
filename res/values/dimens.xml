@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gm__margin_between_profile_box">1dp</dimen>
+</resources>

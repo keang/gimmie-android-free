@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <!-- Loading circle -->
+    <RelativeLayout
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/gm__loading_background" >
+
+        <ProgressBar
+            android:id="@+id/loadingProgress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/profileLoadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileLoadingProgress"
+            android:layout_centerHorizontal="true"
+            android:text="@string/gm__loading"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+    
+    <!-- Rewards catalog -->
+    <RelativeLayout
+	    android:id="@+id/rewards_catalog"
+	    android:layout_width="match_parent"
+	    android:visibility="gone"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	    <FrameLayout
+	        android:layout_width="320dp"
+	        android:layout_height="match_parent"
+	        android:id="@+id/category_container" 
+	    	>
+		    <RelativeLayout
+		        android:id="@+id/loading_group"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:orientation="vertical" >
+		
+			    <ProgressBar
+			        android:id="@+id/loading_bar"
+			        style="?android:attr/progressBarStyleLarge"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerInParent="true" />
+			
+			    <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/loading_bar"
+			        android:layout_centerHorizontal="true"
+			        android:text="@string/gm__loading"
+			        android:textAppearance="?android:attr/textAppearanceLarge" />
+			
+			</RelativeLayout>
+		</FrameLayout>
+	    <android.support.v4.view.ViewPager
+	        android:id="@+id/pager"
+	        android:background="@color/gm__background"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_toRightOf="@+id/category_container"
+	        android:layout_below="@id/indicator" >
+	    </android.support.v4.view.ViewPager>
+	
+	    <RelativeLayout
+	        android:id="@+id/userOverlay"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:background="#CC000000"
+	        android:padding="8dp" >
+	
+	        <TextView
+	            android:id="@+id/userPoints"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:text="@string/gm__loading"
+	            android:textColor="@color/gm__points_overlay_text_color"
+	            android:textStyle="bold" />
+	    </RelativeLayout>
+	</RelativeLayout>
+
+</RelativeLayout>
